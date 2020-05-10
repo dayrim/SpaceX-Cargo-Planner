@@ -24,10 +24,10 @@ const Shipments = () => {
 
   return (
     <BaseLayout routes={routes}>
-      <Route path="/">
+      <Route path="/" exact>
         <ShipmentView></ShipmentView>
       </Route>
-      <Route path="/:shipmentId">
+      <Route path="/:shipmentId" exact>
         <ShipmentView></ShipmentView>
       </Route>
     </BaseLayout>
