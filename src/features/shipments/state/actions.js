@@ -7,3 +7,5 @@ export const fetchShipments = {
 };
 
 export const saveCargoBoxes = createAction("shipments__saveCargoBoxes");
+
+export const searchShipments = createAction("shipments__searchShipments");

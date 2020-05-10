@@ -1,29 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import combineClasses from "classnames";
 
 import useStyles from "components/Input/Input.style";
 
 const Input = ({ children, className, value, onChange, validation }) => {
   const classes = useStyles();
-  const [localValue, setLocalValue] = useState(value);
+  const [localValue, setLocalValue] = useState(value || "");
   const [validity, setValidity] = useState(true);
-  console.log(validity, "validity");
+
+  useEffect(() => {
+    setLocalValue(value);
+  }, [value]);
   return (
     <input
       value={localValue}
       onChange={(e) => {
         if (validation) {
           try {
-            console.log(e.target.value, "e.target.value");
             validation.validateSync(e.target.value);
             setValidity(true);
             setLocalValue(e.target.value);
             onChange(e);
           } catch (err) {
-            console.log(err);
             setValidity(false);
             setLocalValue(e.target.value);
           }
+        } else {
+          setLocalValue(e.target.value);
+          onChange(e);
         }
       }}
       className={combineClasses(

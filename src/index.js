@@ -15,7 +15,7 @@ import "assets/global.scss";
 
 const bootstrap = async () => {
   const preloadedState = {
-    shipments: { shipmentsList: localPersist.loadShipments() },
+    shipments: { shipmentsList: localPersist.loadShipments(), searchTerm: "" },
   };
   ReactDOM.render(
     <React.StrictMode>
