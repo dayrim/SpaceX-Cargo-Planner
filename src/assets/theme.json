@@ -1,0 +1,13 @@
+{
+  "color": {
+    "primary": "#1c1b1c",
+    "primaryText": "#f0f0f0",
+    "secondary": "#1e4cea",
+    "secondaryText": "#FFFFFF",
+    "dark": "#000000",
+    "light": "#FFFFFF"
+  },
+  "font": {
+    "primary": "\"Lato\", Verdana, Arial, Helvetica, sans-serif"
+  }
+}
